@@ -1,18 +1,18 @@
 ---
 name: connect
-description: MCP connection reference for Claude Code, Claude Desktop, Cursor, and Windsurf. Use /mumcp:setup for first-time guided setup.
+description: MCP connection reference for Claude Code, Claude Desktop, Cursor, and Windsurf. Use /mcpwp:setup for first-time guided setup.
 user-invocable: true
 ---
 
 # MCP Connection Reference
 
-Quick reference for connecting different MCP clients to a mumcp-enabled WordPress site. $ARGUMENTS = client name or site URL + API key.
+Quick reference for connecting different MCP clients to a mcpwp-enabled WordPress site. $ARGUMENTS = client name or site URL + API key.
 
-> First time? Run `/mumcp:setup` instead — it walks you through everything interactively.
+> First time? Run `/mcpwp:setup` instead — it walks you through everything interactively.
 
 ## Config Template
 
-Replace `YOUR-SITE.com` and `spai_YOUR_KEY` in every config below.
+Replace `YOUR-SITE.com` and `mcpwp_YOUR_KEY` in every config below.
 
 ## Claude Code
 
@@ -20,9 +20,9 @@ Replace `YOUR-SITE.com` and `spai_YOUR_KEY` in every config below.
 ```json
 {
   "mcpServers": {
-    "mumcp": {
-      "url": "https://YOUR-SITE.com/wp-json/site-pilot-ai/v1/mcp",
-      "headers": {"X-API-Key": "spai_YOUR_KEY"}
+    "mcpwp": {
+      "url": "https://YOUR-SITE.com/wp-json/mcpwp/v1/mcp",
+      "headers": {"X-API-Key": "mcpwp_YOUR_KEY"}
     }
   }
 }
@@ -32,9 +32,9 @@ Replace `YOUR-SITE.com` and `spai_YOUR_KEY` in every config below.
 ```json
 {
   "mcpServers": {
-    "mumcp": {
-      "url": "https://YOUR-SITE.com/wp-json/site-pilot-ai/v1/mcp",
-      "headers": {"X-API-Key": "spai_YOUR_KEY"}
+    "mcpwp": {
+      "url": "https://YOUR-SITE.com/wp-json/mcpwp/v1/mcp",
+      "headers": {"X-API-Key": "mcpwp_YOUR_KEY"}
     }
   }
 }
@@ -46,9 +46,9 @@ Edit `~/Library/Application Support/Claude/claude_desktop_config.json` (Mac) or 
 ```json
 {
   "mcpServers": {
-    "mumcp": {
-      "url": "https://YOUR-SITE.com/wp-json/site-pilot-ai/v1/mcp",
-      "headers": {"X-API-Key": "spai_YOUR_KEY"}
+    "mcpwp": {
+      "url": "https://YOUR-SITE.com/wp-json/mcpwp/v1/mcp",
+      "headers": {"X-API-Key": "mcpwp_YOUR_KEY"}
     }
   }
 }
@@ -58,15 +58,15 @@ Restart Claude Desktop after saving.
 ## Cursor
 
 Settings > MCP Servers > Add:
-- **Name:** mumcp
-- **URL:** `https://YOUR-SITE.com/wp-json/site-pilot-ai/v1/mcp`
-- **Header:** `X-API-Key: spai_YOUR_KEY`
+- **Name:** mcpwp
+- **URL:** `https://YOUR-SITE.com/wp-json/mcpwp/v1/mcp`
+- **Header:** `X-API-Key: mcpwp_YOUR_KEY`
 
 ## Windsurf
 
 Settings > MCP > Add Server:
-- **URL:** `https://YOUR-SITE.com/wp-json/site-pilot-ai/v1/mcp`
-- **Headers:** `{"X-API-Key": "spai_YOUR_KEY"}`
+- **URL:** `https://YOUR-SITE.com/wp-json/mcpwp/v1/mcp`
+- **Headers:** `{"X-API-Key": "mcpwp_YOUR_KEY"}`
 
 ## Multiple Sites
 
@@ -74,13 +74,13 @@ Use a unique name per site in `mcpServers`:
 ```json
 {
   "mcpServers": {
-    "mumcp-staging": {
-      "url": "https://staging.example.com/wp-json/site-pilot-ai/v1/mcp",
-      "headers": {"X-API-Key": "spai_STAGING_KEY"}
+    "mcpwp-staging": {
+      "url": "https://staging.example.com/wp-json/mcpwp/v1/mcp",
+      "headers": {"X-API-Key": "mcpwp_STAGING_KEY"}
     },
-    "mumcp-prod": {
-      "url": "https://example.com/wp-json/site-pilot-ai/v1/mcp",
-      "headers": {"X-API-Key": "spai_PROD_KEY"}
+    "mcpwp-prod": {
+      "url": "https://example.com/wp-json/mcpwp/v1/mcp",
+      "headers": {"X-API-Key": "mcpwp_PROD_KEY"}
     }
   }
 }
@@ -92,7 +92,7 @@ After saving config, call `wp_introspect()` — returns site info, available too
 
 ## Troubleshooting
 
-- **401 Unauthorized:** API key wrong or missing. Must start with `spai_`.
-- **404 Not Found:** Plugin not activated. Check `https://YOUR-SITE.com/wp-json/site-pilot-ai/v1/site-info`
+- **401 Unauthorized:** API key wrong or missing. Must start with `mcpwp_`.
+- **404 Not Found:** Plugin not activated. Check `https://YOUR-SITE.com/wp-json/mcpwp/v1/site-info`
 - **500 Error:** Check WP debug log. Common cause: PHP < 7.4.
-- **CORS error:** Add your domain in WP Admin > mumcp > Settings > Allowed Origins.
+- **CORS error:** Add your domain in WP Admin > mcpwp > Settings > Allowed Origins.

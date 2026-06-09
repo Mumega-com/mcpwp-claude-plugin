@@ -1,12 +1,12 @@
 ---
 name: elementor
-description: Build and edit Elementor pages via mumcp — layout modes, widget keys, flex grids, blueprints, validation, CSS regeneration. Use before working with Elementor data.
+description: Build and edit Elementor pages via mcpwp — layout modes, widget keys, flex grids, blueprints, validation, CSS regeneration. Use before working with Elementor data.
 user-invocable: true
 ---
 
 # Elementor Building Guide
 
-How to build and edit Elementor pages via mumcp. $ARGUMENTS = action or page ID.
+How to build and edit Elementor pages via mcpwp. $ARGUMENTS = action or page ID.
 
 ## Layout Modes
 
@@ -102,7 +102,7 @@ For card grids in container mode:
 
 ## Validation
 
-mumcp auto-validates and fixes:
+mcpwp auto-validates and fixes:
 - Missing element IDs → auto-generated
 - Missing `isInner` on nested containers → auto-set
 - Wrong widget keys → renamed if known, warned if unknown

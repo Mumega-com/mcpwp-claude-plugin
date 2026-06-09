@@ -1,12 +1,12 @@
 ---
 name: status
-description: Check mumcp plugin status on a connected WordPress site — version, Elementor, capabilities, and available updates.
+description: Check mcpwp plugin status on a connected WordPress site — version, Elementor, capabilities, and available updates.
 user-invocable: true
 ---
 
-# mumcp Status
+# mcpwp Status
 
-Check the current state of a mumcp-connected WordPress site. $ARGUMENTS = site name or leave blank for the active connection.
+Check the current state of a mcpwp-connected WordPress site. $ARGUMENTS = site name or leave blank for the active connection.
 
 ---
 
@@ -58,7 +58,7 @@ Key things to verify:
 
 ---
 
-## Open Issues (mumcp Plugin)
+## Open Issues (mcpwp Plugin)
 
 Current known issues and planned work on the plugin:
 - GitHub: https://github.com/Mumega-com/mcp-for-wp/issues
@@ -97,4 +97,4 @@ wp_revoke_api_key(key_id=KEY_ID)
 | Elementor tools unavailable | Elementor not active | Activate Elementor in WP Admin |
 | Slow responses | Large site, no caching | Enable caching plugin |
 | 429 Too Many Requests | Rate limit hit | Check wp_get_rate_limits() |
-| Update stuck | Stale update option | Clear `spai_update_info` option |
+| Update stuck | Stale update option | Clear `mcpwp_update_info` option |

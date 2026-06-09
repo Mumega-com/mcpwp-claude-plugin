@@ -1,12 +1,12 @@
 ---
 name: design
-description: Modern web design principles for building pages via mumcp — typography, color palettes, card styling, responsive layouts, hero sections. Use before building or redesigning pages.
+description: Modern web design principles for building pages via mcpwp — typography, color palettes, card styling, responsive layouts, hero sections. Use before building or redesigning pages.
 user-invocable: true
 ---
 
 # Page Design Guide
 
-Modern web design principles for building pages via mumcp. $ARGUMENTS = style or project context.
+Modern web design principles for building pages via mcpwp. $ARGUMENTS = style or project context.
 
 ## 2026 Design Principles
 
