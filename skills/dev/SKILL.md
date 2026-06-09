@@ -1,25 +1,25 @@
 ---
 name: dev
-description: MCPWP plugin development guide — add tools, bump versions, run tests, use the spai_register_tools hook API. Use when building or modifying the MCPWP WordPress plugin.
+description: MCPWP plugin development guide — add tools, bump versions, run tests, use the mcpwp_register_tools hook API. Use when building or modifying the MCPWP WordPress plugin.
 user-invocable: true
 ---
 
 # MCPWP Plugin Dev Guide
 
-For agents and contributors working on the MCPWP plugin source at `site-pilot-ai/`. $ARGUMENTS = task or question.
+For agents and contributors working on the MCPWP plugin source at `mcpwp/`. $ARGUMENTS = task or question.
 
 ## Repo Layout
 
 ```
 wp-ai-operator/
-  site-pilot-ai/            ← Plugin source (volume-mounted to local WP)
-    site-pilot-ai.php       ← Bootstrap: version constants, requires, hook registration
+  mcpwp/            ← Plugin source (volume-mounted to local WP)
+    mcpwp.php       ← Bootstrap: version constants, requires, hook registration
     includes/
       mcp/
         class-spai-mcp-free-tools.php    ← Free tier tools (~125 tools)
         class-spai-mcp-pro-tools.php     ← Pro tier tools (~130 tools)
         class-spai-mcp-tool-registry.php ← Base registry (define_tool, get_tools, get_tool_map)
-        class-spai-custom-tool-registry.php ← Third-party hook API (spai_register_tools)
+        class-spai-custom-tool-registry.php ← Third-party hook API (mcpwp_register_tools)
       api/
         class-spai-rest-mcp.php          ← MCP dispatch: tools/list, tools/call
         class-spai-rest-*.php            ← REST controllers per surface
@@ -42,7 +42,7 @@ wp-ai-operator/
 |-----------|------|
 | Free-tier tool | `includes/mcp/class-spai-mcp-free-tools.php` |
 | Pro-tier tool | `includes/mcp/class-spai-mcp-pro-tools.php` |
-| Third-party plugin | `add_filter('spai_register_tools', ...)` in your plugin |
+| Third-party plugin | `add_filter('mcpwp_register_tools', ...)` in your plugin |
 
 ### 2. Define the tool
 
@@ -73,18 +73,18 @@ Add a case in `includes/api/class-spai-rest-mcp.php` → `handle_tools_call()`, 
 ### 4. Fire the analytics hook at every exit point
 
 ```php
-do_action( 'spai_tool_called', $tool, $category, $duration_ms, $error_code );
+do_action( 'mcpwp_tool_called', $tool, $category, $duration_ms, $error_code );
 // $error_code: '' (success) | 'tool_not_found' | 'execution_error' | 'scope_denied'
 ```
 
 ### 5. Bump the version (3 files — all three required)
 
 ```bash
-# site-pilot-ai/site-pilot-ai.php
+# mcpwp/mcpwp.php
 # header:  Version: X.Y.Z
-# constant: define( 'SPAI_VERSION', 'X.Y.Z' );
+# constant: define( 'MCPWP_VERSION', 'X.Y.Z' );
 
-# site-pilot-ai/readme.txt
+# mcpwp/readme.txt
 # Stable tag: X.Y.Z
 # == Changelog ==
 # = X.Y.Z =
@@ -108,14 +108,14 @@ docker exec wp-test-wordpress-1 wp <command> --allow-root
 # Generate API key
 docker exec wp-test-wordpress-1 bash -c 'php -r "
 require_once \"/var/www/html/wp-load.php\";
-\$key = \"spai_\" . bin2hex(random_bytes(24));
-update_option(\"spai_api_key\", wp_hash_password(\$key));
+\$key = \"mcpwp_\" . bin2hex(random_bytes(24));
+update_option(\"mcpwp_api_key\", wp_hash_password(\$key));
 echo \$key;
 "'
 
 # Quick smoke test
-KEY="spai_..."
-curl -s http://localhost:8080/wp-json/site-pilot-ai/v1/site-info -H "X-API-Key: $KEY" | jq .capabilities
+KEY="mcpwp_..."
+curl -s http://localhost:8080/wp-json/mcpwp/v1/site-info -H "X-API-Key: $KEY" | jq .capabilities
 ```
 
 ## CI
@@ -124,27 +124,27 @@ GitHub Actions on every push to `Mumega-com/mcpwp`:
 
 | Check | What it runs |
 |-------|-------------|
-| PHP Syntax Lint | `find site-pilot-ai -name '*.php' \| xargs -n1 php -l` |
+| PHP Syntax Lint | `find mcpwp -name '*.php' \| xargs -n1 php -l` |
 | PHP 7.4–8.2 Validation | Syntax + static checks per PHP version |
 | lint-and-test | PHPUnit (`tests/`) + PHP Syntax Lint |
 | Proxy Worker Tests | Vitest on `spai-proxy-worker/` |
 
 **PHP lint locally (if PHP available):**
 ```bash
-find site-pilot-ai -name '*.php' -not -path '*/vendor/*' | xargs -n1 php -l
+find mcpwp -name '*.php' -not -path '*/vendor/*' | xargs -n1 php -l
 ```
 
 **PHPUnit:**
 ```bash
-cd site-pilot-ai && ./vendor/bin/phpunit tests/
+cd mcpwp && ./vendor/bin/phpunit tests/
 ```
 
-## Third-Party Tool Registration (`spai_register_tools`)
+## Third-Party Tool Registration (`mcpwp_register_tools`)
 
 Third-party plugins register tools without extending any class:
 
 ```php
-add_filter( 'spai_register_tools', function( $tools ) {
+add_filter( 'mcpwp_register_tools', function( $tools ) {
     $tools[] = [
         'name'        => 'digid_list_listings',   // prefix_action format
         'description' => 'List active real estate listings from the Digid property database.',
@@ -163,7 +163,7 @@ add_filter( 'spai_register_tools', function( $tools ) {
 Required fields: `name`, `description`, `rest_path`
 Optional: `method` (GET), `category` ('custom'), `input_props`, `destructive`, `open_world`, `param_remap`
 
-The `rest_path` must be the full WP REST route (e.g. `/digid/v1/endpoint`). MCPWP dispatches directly to it — no `/site-pilot-ai/v1` prefix is added for custom tools.
+The `rest_path` must be the full WP REST route (e.g. `/digid/v1/endpoint`). MCPWP dispatches directly to it — no `/mcpwp/v1` prefix is added for custom tools.
 
 ## Tool Description Quality (BM25)
 

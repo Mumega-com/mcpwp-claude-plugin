@@ -1,27 +1,27 @@
 {
-  "name": "mumcp",
+  "name": "mcpwp",
   "owner": {
     "name": "Mumega",
     "email": "info@mumega.com"
   },
   "metadata": {
     "description": "Connect Claude Code to any WordPress site. 270+ MCP tools for pages, Elementor, WooCommerce, media, SEO, and more.",
-    "version": "1.2.0"
+    "version": "1.3.0"
   },
   "plugins": [
     {
-      "name": "mumcp",
+      "name": "mcpwp",
       "source": {
         "source": "github",
-        "repo": "Mumega-com/mumcp-claude-plugin"
+        "repo": "Mumega-com/mcpwp-claude-plugin"
       },
-      "description": "Connect Claude Code to any WordPress site via mumcp — 270+ MCP tools for managing pages, Elementor, WooCommerce, media, SEO, and more through natural language.",
-      "version": "1.2.0",
+      "description": "Connect Claude Code to any WordPress site via mcpwp — 270+ MCP tools for managing pages, Elementor, WooCommerce, media, SEO, and more through natural language.",
+      "version": "1.3.0",
       "author": {
         "name": "Mumega"
       },
       "homepage": "https://mucp.mumega.com",
-      "repository": "https://github.com/Mumega-com/mumcp-claude-plugin",
+      "repository": "https://github.com/Mumega-com/mcpwp-claude-plugin",
       "license": "MIT",
       "keywords": ["wordpress", "mcp", "elementor", "woocommerce", "cms", "ai"],
       "category": "cms-integrations",

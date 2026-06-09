@@ -1,13 +1,13 @@
 ---
 name: operate
-description: Operate a client's WordPress site brand-first and governed — the core loop every marketing/website agent runs on connect. Onboard, read the brand book, then build/edit on-brand with approval-first safety. Use the moment you connect to any mumcp site to do real work.
+description: Operate a client's WordPress site brand-first and governed — the core loop every marketing/website agent runs on connect. Onboard, read the brand book, then build/edit on-brand with approval-first safety. Use the moment you connect to any mcpwp site to do real work.
 user-invocable: true
 ---
 
 # Operate a WordPress Site (brand-first, governed)
 
 This is the **operating loop** — the agent-half of a deployable site. Reference skills tell you
-*what tools exist* (`/mumcp:tools`, `/mumcp:elementor`, `/mumcp:design`). This skill tells you *how to
+*what tools exist* (`/mcpwp:tools`, `/mcpwp:elementor`, `/mcpwp:design`). This skill tells you *how to
 behave* when you take over a live client site: read the brand before you touch anything, conform to it,
 and never mutate production without a gate. Proven on real client sites (digid.ca, crophelp.ai).
 
@@ -46,7 +46,7 @@ hex, dark/light themes), typography scale, spacing rhythm, navigation, page stru
 
 ### 4. Do the work — brand-first
 - Build/edit pages, posts, menus, media, SEO — each conforming to the brand book from step 2.
-- Elementor work: read `/mumcp:elementor` first; always `wp_get_elementor_summary` before editing;
+- Elementor work: read `/mcpwp:elementor` first; always `wp_get_elementor_summary` before editing;
   prefer surgical tools (`wp_edit_section`, `wp_edit_widget`, `wp_patch_elementor`) over full-page rewrites.
 - Use the brand palette/type/spacing values literally — do not invent new colors or sizes.
 - Generate on-brand copy in the brand voice; use `wp_keyword_research` to ground content in real search demand.
@@ -79,5 +79,5 @@ their structure as a blueprint, and this skill is the squad's reusable playbook 
 every client site. That is how one proven build (digid.ca) becomes a repeatable product.
 
 ## Reference skills (load as needed)
-`/mumcp:tools` (discover tools) · `/mumcp:elementor` (page building) · `/mumcp:design` (design
-principles) · `/mumcp:status` (site/plugin health) · `/mumcp:connect` (wiring a client).
+`/mcpwp:tools` (discover tools) · `/mcpwp:elementor` (page building) · `/mcpwp:design` (design
+principles) · `/mcpwp:status` (site/plugin health) · `/mcpwp:connect` (wiring a client).
