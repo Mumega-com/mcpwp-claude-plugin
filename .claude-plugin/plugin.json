@@ -1,6 +1,6 @@
 {
   "name": "mumcp",
-  "description": "Connect Claude Code to any WordPress site via MCP. 239 tools for pages, Elementor, WooCommerce, media, SEO. Includes /mumcp:setup, /mumcp:connect, /mumcp:tools, /mumcp:elementor, /mumcp:design, /mumcp:status skills and wp-builder agent.",
-  "version": "1.1.0",
+  "description": "Connect Claude Code to any WordPress site via MCP. 270+ tools for pages, Elementor, WooCommerce, media, SEO, blueprints, and site memory. Includes /mumcp:setup, /mumcp:connect, /mumcp:operate, /mumcp:tools, /mumcp:elementor, /mumcp:design, /mumcp:status, /mumcp:dev skills and the wp-builder agent.",
+  "version": "1.2.0",
   "keywords": ["wordpress", "mcp", "elementor", "woocommerce", "cms"]
 }
