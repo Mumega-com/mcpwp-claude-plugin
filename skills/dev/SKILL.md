@@ -16,16 +16,16 @@ wp-ai-operator/
     mcpwp.php       ← Bootstrap: version constants, requires, hook registration
     includes/
       mcp/
-        class-spai-mcp-free-tools.php    ← Free tier tools (~125 tools)
-        class-spai-mcp-pro-tools.php     ← Pro tier tools (~130 tools)
-        class-spai-mcp-tool-registry.php ← Base registry (define_tool, get_tools, get_tool_map)
-        class-spai-custom-tool-registry.php ← Third-party hook API (mcpwp_register_tools)
+        class-mcpwp-mcp-free-tools.php   ← Free tier tools (180+ on Free)
+        class-mcpwp-mcp-pro-tools.php    ← Pro tier tools (Pro total 260+)
+        class-mcpwp-mcp-tool-registry.php ← Base registry (define_tool, get_tools, get_tool_map)
+        class-mcpwp-custom-tool-registry.php ← Third-party hook API (mcpwp_register_tools)
       api/
-        class-spai-rest-mcp.php          ← MCP dispatch: tools/list, tools/call
-        class-spai-rest-*.php            ← REST controllers per surface
+        class-mcpwp-rest-mcp.php          ← MCP dispatch: tools/list, tools/call
+        class-mcpwp-rest-*.php            ← REST controllers per surface
       core/
-        class-spai-analytics.php         ← PostHog server-side events
-        class-spai-*.php                 ← Core services (pages, posts, media, SEO…)
+        class-mcpwp-analytics.php         ← PostHog server-side events
+        class-mcpwp-*.php                 ← Core services (pages, posts, media, SEO…)
     tests/                  ← PHPUnit tests
     docs/                   ← openapi-chatgpt.yaml, blog post, PH comment
   scripts/
@@ -40,8 +40,8 @@ wp-ai-operator/
 
 | Tool type | File |
 |-----------|------|
-| Free-tier tool | `includes/mcp/class-spai-mcp-free-tools.php` |
-| Pro-tier tool | `includes/mcp/class-spai-mcp-pro-tools.php` |
+| Free-tier tool | `includes/mcp/class-mcpwp-mcp-free-tools.php` |
+| Pro-tier tool | `includes/mcp/class-mcpwp-mcp-pro-tools.php` |
 | Third-party plugin | `add_filter('mcpwp_register_tools', ...)` in your plugin |
 
 ### 2. Define the tool
@@ -68,7 +68,7 @@ $tools[] = $this->define_tool(
 
 ### 3. Add the REST route handler
 
-Add a case in `includes/api/class-spai-rest-mcp.php` → `handle_tools_call()`, or create a new REST controller in `includes/api/class-spai-rest-*.php` and register it.
+Add a case in `includes/api/class-mcpwp-rest-mcp.php` → `handle_tools_call()`, or create a new REST controller in `includes/api/class-mcpwp-rest-*.php` and register it.
 
 ### 4. Fire the analytics hook at every exit point
 
@@ -127,7 +127,7 @@ GitHub Actions on every push to `Mumega-com/mcpwp`:
 | PHP Syntax Lint | `find mcpwp -name '*.php' \| xargs -n1 php -l` |
 | PHP 7.4–8.2 Validation | Syntax + static checks per PHP version |
 | lint-and-test | PHPUnit (`tests/`) + PHP Syntax Lint |
-| Proxy Worker Tests | Vitest on `spai-proxy-worker/` |
+| Proxy Worker Tests | Vitest on `mcpwp-agency-proxy/` |
 
 **PHP lint locally (if PHP available):**
 ```bash

@@ -1,12 +1,12 @@
 ---
 name: tools
-description: Browse all 239 mcpwp MCP tools by category — pages, Elementor, WooCommerce, media, SEO, and more. Use to discover available tools before working with a WordPress site.
+description: Browse the mcpwp MCP tools by category (260+ with Pro, 180+ on Free) — pages, Elementor, WooCommerce, media, SEO, and more. Use to discover available tools before working with a WordPress site.
 user-invocable: true
 ---
 
 # mcpwp Tools Reference
 
-Browse and learn about all 239 mcpwp MCP tools. $ARGUMENTS = category name or tool name.
+Browse and learn about the mcpwp MCP tools (260+ with Pro, 180+ on Free). $ARGUMENTS = category name or tool name.
 
 ## Categories
 
@@ -83,7 +83,7 @@ Different roles limit which tool categories are available:
 
 | Role | Categories | ~Tools | Use case |
 |------|-----------|--------|----------|
-| `admin` | All | 239 | Full site management |
+| `admin` | All | 260+ | Full site management |
 | `designer` | elementor*, gutenberg, media, site | ~82 | Page building |
 | `author` | content, media, taxonomy | ~40 | Content writing |
 | `editor` | content, elementor*, media, taxonomy, seo | ~99 | Content + design |
