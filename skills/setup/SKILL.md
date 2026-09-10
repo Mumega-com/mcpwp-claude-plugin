@@ -48,7 +48,7 @@ Choose a role for the key based on what you need:
 
 | Role | Tools | Best for |
 |------|-------|----------|
-| `admin` | All 239 | Full site management |
+| `admin` | All (260+ with Pro) | Full site management |
 | `designer` | ~82 | Page building only |
 | `editor` | ~99 | Content + design |
 | `author` | ~40 | Content writing only |

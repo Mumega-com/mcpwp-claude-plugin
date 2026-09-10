@@ -127,7 +127,7 @@ GitHub Actions on every push to `Mumega-com/mcpwp`:
 | PHP Syntax Lint | `find mcpwp -name '*.php' \| xargs -n1 php -l` |
 | PHP 7.4–8.2 Validation | Syntax + static checks per PHP version |
 | lint-and-test | PHPUnit (`tests/`) + PHP Syntax Lint |
-| Proxy Worker Tests | Vitest on `spai-proxy-worker/` |
+| Proxy Worker Tests | Vitest on `mcpwp-agency-proxy/` |
 
 **PHP lint locally (if PHP available):**
 ```bash
