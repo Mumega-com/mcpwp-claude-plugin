@@ -1,6 +1,6 @@
 # mcpwp — Claude Code Plugin
 
-Connect Claude Code to any WordPress site. 239 MCP tools for managing pages, Elementor, WooCommerce, media, SEO, and more through natural language.
+Connect Claude Code to any WordPress site. 260+ MCP tools for managing pages, Elementor, WooCommerce, media, SEO, and more through natural language.
 
 ## Install
 
@@ -23,7 +23,7 @@ git clone https://github.com/Mumega-com/mcpwp-claude-plugin.git ~/.claude/plugin
 |---------|-------------|
 | `/mcpwp:setup` | **Start here** — guided first-time setup |
 | `/mcpwp:connect` | MCP config reference for all clients |
-| `/mcpwp:tools` | Browse all 239 tools by category |
+| `/mcpwp:tools` | Browse the site's tools by category |
 | `/mcpwp:elementor` | Elementor building guide — layouts, widgets, flex grids |
 | `/mcpwp:design` | Modern web design principles for page building |
 | `/mcpwp:status` | Check plugin version, Elementor, and available updates |
@@ -47,16 +47,16 @@ git clone https://github.com/Mumega-com/mcpwp-claude-plugin.git ~/.claude/plugin
 
 mcpwp is a free WordPress plugin that turns your site into an MCP server. Any AI assistant that supports the Model Context Protocol (Claude, Gemini, GPT, Cursor, Windsurf) can manage the entire site through natural language.
 
-- **239 MCP tools** across 15 categories
+- **260+ MCP tools** (180+ on the Free plan; Pro adds the rest)
 - **Elementor 4 support** with validation, auto-fix, and blueprint system
 - **Role-scoped API keys** (admin, designer, author, editor, custom)
-- **All features free** — no paywalls
+- **Free plan** plus **Pro** for SEO market data, WooCommerce, staging, Figma and more
 
 ## Links
 
-- **Plugin website:** https://mucp.mumega.com
-- **WordPress plugin:** https://mumega.com/mcp-updates/mcpwp-latest.zip
-- **Plugin source:** https://github.com/Mumega-com/mcp-for-wp
+- **Plugin website:** https://mcpwp.net
+- **WordPress plugin:** https://updates.mcpwp.net/mcpwp-latest.zip
+- **Documentation:** https://docs.mcpwp.net
 - **Plugin on WordPress.org:** (pending approval, slug: mcpwp)
 
 ## License

@@ -18,17 +18,17 @@ If mcpwp is not yet installed on your site, install it now.
 
 **Option A — WP-CLI:**
 ```bash
-wp plugin install https://mumega.com/mcp-updates/mcpwp-latest.zip --activate
+wp plugin install https://updates.mcpwp.net/mcpwp-latest.zip --activate
 ```
 
 **Option B — WP Admin:**
-1. Download from https://mucp.mumega.com
+1. Download https://updates.mcpwp.net/mcpwp-latest.zip
 2. Go to WP Admin > Plugins > Add New > Upload Plugin
 3. Upload the zip and click Activate
 
 **Option C — WP-CLI (Docker):**
 ```bash
-docker exec <container> wp plugin install https://mumega.com/mcp-updates/mcpwp-latest.zip --activate --allow-root
+docker exec <container> wp plugin install https://updates.mcpwp.net/mcpwp-latest.zip --activate --allow-root
 ```
 
 Confirm it's running: visit `https://YOUR-SITE.com/wp-json/mcpwp/v1/site-info` — you should get a JSON response.

@@ -19,7 +19,7 @@ wp_site_info()
 ```
 
 Look for:
-- **Plugin version** — compare to latest at https://mumega.com/spai-updates/version.json
+- **Plugin version** — compare to latest at https://updates.mcpwp.net/version.json
 - **Elementor status** — active, version, layout mode (`container` vs `classic`)
 - **WooCommerce** — active or not
 - **PHP version** — must be 7.4+, ideally 8.1+
@@ -36,7 +36,7 @@ wp_check_update()
 
 Or check manually:
 ```bash
-curl -s https://mumega.com/spai-updates/version.json | jq '{version, changelog}'
+curl -s https://updates.mcpwp.net/version.json | jq '{version, changelog}'
 ```
 
 If an update is available, trigger it:
@@ -61,7 +61,7 @@ Key things to verify:
 ## Open Issues (mcpwp Plugin)
 
 Current known issues and planned work on the plugin:
-- GitHub: https://github.com/Mumega-com/mcp-for-wp/issues
+- Documentation: https://docs.mcpwp.net
 
 Notable open issues:
 - #193: Phase 2 revenue and marketing plan

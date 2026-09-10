@@ -2,7 +2,7 @@
 
 mcpwp connects Claude Code to any WordPress site via the Model Context Protocol. Once configured, you can manage pages, build Elementor layouts, handle media, run SEO audits, manage WooCommerce products, and more — all through natural language.
 
-**239 MCP tools. All free. No paywalls.**
+**260+ MCP tools (180+ on the Free plan; Pro adds the rest).**
 
 ---
 
@@ -23,7 +23,7 @@ This walks you through installing the WordPress plugin, generating an API key, a
 |---------|-------------|
 | `/mcpwp:setup` | **Start here** — guided first-time setup |
 | `/mcpwp:connect` | MCP config reference for Claude Code, Desktop, Cursor, Windsurf |
-| `/mcpwp:tools` | Browse all 239 tools by category |
+| `/mcpwp:tools` | Browse the site's tools by category |
 | `/mcpwp:elementor` | Elementor building guide — layouts, widget keys, flex grids, blueprints |
 | `/mcpwp:design` | Modern web design principles for page building |
 | `/mcpwp:status` | Check plugin version, Elementor status, and available updates |
@@ -53,7 +53,7 @@ Once connected:
 
 ## Links
 
-- **Plugin website:** https://mucp.mumega.com
-- **Plugin source:** https://github.com/Mumega-com/mcp-for-wp
+- **Plugin website:** https://mcpwp.net
+- **Documentation:** https://docs.mcpwp.net
 - **Claude Code plugin:** https://github.com/Mumega-com/mcpwp-claude-plugin
 - **WordPress.org:** pending (slug: mcpwp)
