@@ -27,6 +27,7 @@ git clone https://github.com/Mumega-com/mcpwp-claude-plugin.git ~/.claude/plugin
 | `/mcpwp:elementor` | Elementor building guide — layouts, widgets, flex grids |
 | `/mcpwp:design` | Modern web design principles for page building |
 | `/mcpwp:status` | Check plugin version, Elementor, and available updates |
+| `/mcpwp:seo-loop` | Run the daily/weekly read → judge → fix → write → measure SEO loop |
 
 ### Agents
 | Agent | What it does |

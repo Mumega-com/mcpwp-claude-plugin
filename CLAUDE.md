@@ -27,6 +27,7 @@ This walks you through installing the WordPress plugin, generating an API key, a
 | `/mcpwp:elementor` | Elementor building guide — layouts, widget keys, flex grids, blueprints |
 | `/mcpwp:design` | Modern web design principles for page building |
 | `/mcpwp:status` | Check plugin version, Elementor status, and available updates |
+| `/mcpwp:seo-loop` | Run the daily/weekly read → judge → fix → write → measure SEO loop |
 
 ## Available Agents
 
