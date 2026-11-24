@@ -9,7 +9,8 @@ user-invocable: true
 This is the **operating loop** — the agent-half of a deployable site. Reference skills tell you
 *what tools exist* (`/mcpwp:tools`, `/mcpwp:elementor`, `/mcpwp:design`). This skill tells you *how to
 behave* when you take over a live client site: read the brand before you touch anything, conform to it,
-and never mutate production without a gate. Proven on real client sites (digid.ca, crophelp.ai).
+and never mutate production without a gate. The fictional Example Homes WordPress site at
+`homes.example.invalid` illustrates this workflow.
 
 > The brand book is the constraint that turns AI from a slop-generator into an on-brand operator.
 > Read it first, every time. Everything you produce conforms to it or it does not ship.
@@ -76,7 +77,8 @@ on the site; or a playbook's stop condition triggers.
 A deployable site snapshot = **this operating skill (the agent's behavior) + the site's brand book +
 blueprint (the WordPress structure)**. Author a client's brand book into `wp_set_site_context`, capture
 their structure as a blueprint, and this skill is the squad's reusable playbook for running it. One skill,
-every client site. That is how one proven build (digid.ca) becomes a repeatable product.
+every client site. For example, the fictional `homes.example.invalid` site can supply a brand book
+and blueprint for illustrating this repeatable workflow.
 
 ## Reference skills (load as needed)
 `/mcpwp:tools` (discover tools) · `/mcpwp:elementor` (page building) · `/mcpwp:design` (design

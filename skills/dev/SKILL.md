@@ -99,7 +99,7 @@ do_action( 'mcpwp_tool_called', $tool, $category, $duration_ms, $error_code );
 
 ```bash
 # WordPress at http://localhost:8080
-# Docker Compose: ~/projects/themusicalunicorn/wp-test/docker-compose.yml
+# Docker Compose: ~/projects/example-homes/wp-test/docker-compose.yml
 # Plugin is volume-mounted — file edits are live instantly, no deploy needed
 
 # WP-CLI
@@ -141,14 +141,15 @@ cd mcpwp && ./vendor/bin/phpunit tests/
 
 ## Third-Party Tool Registration (`mcpwp_register_tools`)
 
-Third-party plugins register tools without extending any class:
+Third-party plugins register tools without extending any class. This example uses a fictional
+Example Homes WordPress site at `homes.example.invalid`:
 
 ```php
 add_filter( 'mcpwp_register_tools', function( $tools ) {
     $tools[] = [
-        'name'        => 'digid_list_listings',   // prefix_action format
-        'description' => 'List active real estate listings from the Digid property database.',
-        'rest_path'   => '/digid/v1/listings',    // full WP REST route
+        'name'        => 'example_homes_list_listings',   // prefix_action format
+        'description' => 'List active real estate listings from the fictional Example Homes property database.',
+        'rest_path'   => '/example-homes/v1/listings',    // full WP REST route
         'method'      => 'GET',
         'category'    => 'listings',
         'input_props' => [
@@ -163,7 +164,7 @@ add_filter( 'mcpwp_register_tools', function( $tools ) {
 Required fields: `name`, `description`, `rest_path`
 Optional: `method` (GET), `category` ('custom'), `input_props`, `destructive`, `open_world`, `param_remap`
 
-The `rest_path` must be the full WP REST route (e.g. `/digid/v1/endpoint`). MCPWP dispatches directly to it — no `/mcpwp/v1` prefix is added for custom tools.
+The `rest_path` must be the full WP REST route (e.g. `/example-homes/v1/endpoint`). MCPWP dispatches directly to it — no `/mcpwp/v1` prefix is added for custom tools.
 
 ## Tool Description Quality (BM25)
 
