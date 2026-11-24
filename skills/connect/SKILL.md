@@ -12,7 +12,8 @@ Quick reference for connecting different MCP clients to a mcpwp-enabled WordPres
 
 ## Config Template
 
-Replace `YOUR-SITE.com` and `mcpwp_YOUR_KEY` in every config below.
+Examples use the fictional Example Homes WordPress site at `homes.example.invalid`.
+Replace the example hostnames and `mcpwp_YOUR_KEY` with your own site and key before connecting.
 
 ## Claude Code
 
@@ -21,7 +22,7 @@ Replace `YOUR-SITE.com` and `mcpwp_YOUR_KEY` in every config below.
 {
   "mcpServers": {
     "mcpwp": {
-      "url": "https://YOUR-SITE.com/wp-json/mcpwp/v1/mcp",
+      "url": "https://homes.example.invalid/wp-json/mcpwp/v1/mcp",
       "headers": {"X-API-Key": "mcpwp_YOUR_KEY"}
     }
   }
@@ -33,7 +34,7 @@ Replace `YOUR-SITE.com` and `mcpwp_YOUR_KEY` in every config below.
 {
   "mcpServers": {
     "mcpwp": {
-      "url": "https://YOUR-SITE.com/wp-json/mcpwp/v1/mcp",
+      "url": "https://homes.example.invalid/wp-json/mcpwp/v1/mcp",
       "headers": {"X-API-Key": "mcpwp_YOUR_KEY"}
     }
   }
@@ -47,7 +48,7 @@ Edit `~/Library/Application Support/Claude/claude_desktop_config.json` (Mac) or 
 {
   "mcpServers": {
     "mcpwp": {
-      "url": "https://YOUR-SITE.com/wp-json/mcpwp/v1/mcp",
+      "url": "https://homes.example.invalid/wp-json/mcpwp/v1/mcp",
       "headers": {"X-API-Key": "mcpwp_YOUR_KEY"}
     }
   }
@@ -59,13 +60,13 @@ Restart Claude Desktop after saving.
 
 Settings > MCP Servers > Add:
 - **Name:** mcpwp
-- **URL:** `https://YOUR-SITE.com/wp-json/mcpwp/v1/mcp`
+- **URL:** `https://homes.example.invalid/wp-json/mcpwp/v1/mcp`
 - **Header:** `X-API-Key: mcpwp_YOUR_KEY`
 
 ## Windsurf
 
 Settings > MCP > Add Server:
-- **URL:** `https://YOUR-SITE.com/wp-json/mcpwp/v1/mcp`
+- **URL:** `https://homes.example.invalid/wp-json/mcpwp/v1/mcp`
 - **Headers:** `{"X-API-Key": "mcpwp_YOUR_KEY"}`
 
 ## Multiple Sites
@@ -75,11 +76,11 @@ Use a unique name per site in `mcpServers`:
 {
   "mcpServers": {
     "mcpwp-staging": {
-      "url": "https://staging.example.com/wp-json/mcpwp/v1/mcp",
+      "url": "https://staging.homes.example.invalid/wp-json/mcpwp/v1/mcp",
       "headers": {"X-API-Key": "mcpwp_STAGING_KEY"}
     },
     "mcpwp-prod": {
-      "url": "https://example.com/wp-json/mcpwp/v1/mcp",
+      "url": "https://homes.example.invalid/wp-json/mcpwp/v1/mcp",
       "headers": {"X-API-Key": "mcpwp_PROD_KEY"}
     }
   }
@@ -93,6 +94,6 @@ After saving config, call `wp_introspect()` — returns site info, available too
 ## Troubleshooting
 
 - **401 Unauthorized:** API key wrong or missing. Must start with `mcpwp_`.
-- **404 Not Found:** Plugin not activated. Check `https://YOUR-SITE.com/wp-json/mcpwp/v1/site-info`
+- **404 Not Found:** Plugin not activated. Check `https://homes.example.invalid/wp-json/mcpwp/v1/site-info`
 - **500 Error:** Check WP debug log. Common cause: PHP < 7.4.
 - **CORS error:** Add your domain in WP Admin > mcpwp > Settings > Allowed Origins.

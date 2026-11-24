@@ -9,6 +9,8 @@ user-invocable: true
 Welcome. This skill walks you through connecting Claude Code to your WordPress site for the first time. $ARGUMENTS = site URL (optional, skips step 1).
 
 Run through the steps below in order. Each one takes about 30 seconds.
+Examples use the fictional Example Homes site at `homes.example.invalid`; replace this hostname
+with your own WordPress site before connecting.
 
 ---
 
@@ -31,7 +33,7 @@ wp plugin install https://updates.mcpwp.net/mcpwp-latest.zip --activate
 docker exec <container> wp plugin install https://updates.mcpwp.net/mcpwp-latest.zip --activate --allow-root
 ```
 
-Confirm it's running: visit `https://YOUR-SITE.com/wp-json/mcpwp/v1/site-info` — you should get a JSON response.
+Confirm it's running: visit `https://homes.example.invalid/wp-json/mcpwp/v1/site-info` — you should get a JSON response.
 
 ---
 
@@ -66,7 +68,7 @@ Take your site URL and API key from Step 2, then add the MCP server config.
 {
   "mcpServers": {
     "mcpwp": {
-      "url": "https://YOUR-SITE.com/wp-json/mcpwp/v1/mcp",
+      "url": "https://homes.example.invalid/wp-json/mcpwp/v1/mcp",
       "headers": {"X-API-Key": "mcpwp_YOUR_KEY"}
     }
   }
@@ -126,7 +128,7 @@ If you have your site URL and API key ready, here is the complete config block t
 {
   "mcpServers": {
     "mcpwp": {
-      "url": "https://REPLACE_WITH_YOUR_SITE/wp-json/mcpwp/v1/mcp",
+      "url": "https://homes.example.invalid/wp-json/mcpwp/v1/mcp",
       "headers": {
         "X-API-Key": "REPLACE_WITH_YOUR_KEY"
       }
@@ -135,4 +137,4 @@ If you have your site URL and API key ready, here is the complete config block t
 }
 ```
 
-Replace both values and paste into your client config file.
+Replace the example hostname and key placeholder, then paste into your client config file.
